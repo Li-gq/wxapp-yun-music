@@ -1,0 +1,125 @@
+/* pages/playSong/playSong.wxss */
+.container{
+  background-color: gray;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header .author{
+  line-height: 100rpx;
+  font-size: 50rpx;
+  color: white;
+}
+.header .circle{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 100;
+}
+/* 168 244 */
+.header .needle{
+  position: relative;
+  width: 168rpx; 
+  height: 244rpx;
+  top: -30rpx;
+  left: 50rpx;
+  z-index: 10;
+  transition: transform 1s;
+  transform-origin: 30rpx 0;
+}
+.needle.to-rotate{
+  transform:rotate(-30deg);
+}
+.header .disc-container{
+  position: relative;
+  width: 496rpx;
+  height: 496rpx;
+  top: -140rpx;
+  /* border: 1px solid red; */
+}
+.header .disc-container.to-rotate{
+  animation: rotate 4s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg)
+  }
+}
+.disc-container .disc{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.disc-container .poster{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 100rpx;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50rpx;
+  border-top: 2rpx solid white;
+}
+.footer text{
+  font-size: 50rpx;
+}
+.footer .play-btn{
+  font-size: 80rpx;
+}
+
+/* 进度条样式 */
+.process-bar{
+  position: absolute;
+  bottom: 200rpx;
+  display: flex;
+}
+.process-bar .bar{
+  position: relative;
+  width: 400rpx;
+  height: 10rpx;
+  margin: auto 20rpx;
+}
+.process-bar .bar .line{
+  position: absolute;
+  width: 400rpx;
+  height: 10rpx;
+  background-color: rgb(182, 182, 182);
+}
+.process-bar .bar .move-line{
+  position: absolute;
+  /* width: 100rpx; */
+  height: 10rpx;
+  background-color: #d43c33;
+}
+.process-bar .bar .move-line .process-circle{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  top: -10rpx;
+  right: -15rpx;
+  background-color: white;
+}

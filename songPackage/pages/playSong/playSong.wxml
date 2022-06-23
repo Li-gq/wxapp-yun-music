@@ -1,0 +1,32 @@
+<!--pages/playSong/playSong.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="author">
+      {{songInfo.ar[0].name}}
+    </view>
+    <view class="circle"></view>
+    <image class="needle {{!isPlay? 'to-rotate' : ''}}" src="/static/images/song/needle.png"></image>
+    <view class="disc-container {{isPlay? 'to-rotate' : ''}}">
+      <image class="disc" src="/static/images/song/disc.png"></image>
+      <image class="poster" src="{{songInfo.al.picUrl}}"> </image>
+    </view>
+  </view>
+  <view class="process-bar">
+    <text>{{currentTime}}</text>
+    <view class="bar">
+      <view class="line"></view>
+      <view class="move-line" style="width: {{currentWidth+'rpx'}}">
+        <view class="process-circle"></view>
+      </view>
+    </view>
+    <text>{{durationTime}}</text>
+  </view>
+  <view class="footer">
+    <text class="iconfont icon-bofang-xunhuanbofang"></text>
+    <text class="iconfont icon-shangyiqu101" bindtap="handleSwitch" data-type="prev"></text>
+    <text wx:if="{{!isPlay}}" class="iconfont icon-bofang1 play-btn" bindtap="handleIsPlay"></text>
+    <text wx:else class="iconfont icon-zanting1 play-btn" bindtap="handleIsPlay"></text>
+    <text class="iconfont icon-xiayiqu101" bindtap="handleSwitch" data-type="next"></text>
+    <text class="iconfont icon-gengduo"></text>
+  </view>
+</view>

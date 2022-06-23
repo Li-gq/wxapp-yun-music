@@ -1,0 +1,74 @@
+/* pages/recommendSong/recommendSong.wxss */
+.recommend-container{
+  width: 100%;
+  height: 100%;
+}
+.header{
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+.header image{
+  width: 100%;
+  height: 100%;
+}
+.header text{
+  position: absolute;
+  top: 55%; left: 52%;
+  transform: translateX(-50%) translateY(-50%);
+  color: white;
+}
+
+/* 内容区 */
+.main{
+  position: relative;
+  padding: 0 20rpx;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  top: -40rpx;
+  background-color: white;
+}
+.main .title{
+  display: flex;
+  justify-content: space-between;
+}
+.main .title text{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.main .scroll-list{
+  height: calc(100vh - 340rpx);
+}
+.main .scroll-list .scroll-item{
+  margin-bottom: 20rpx;
+}
+.main .scroll-list .scroll-item .content{
+  display: flex;
+}
+.scroll-item .content .left{
+  display: flex;
+  flex: 1 0;
+}
+.left .song-name{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+}
+.song-name text{
+  padding: 0 20rpx;
+}
+.scroll-item .content .right{
+  flex: 0 0 80rpx;
+  position: relative;
+}
+.scroll-item .post{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+}
+.scroll-item .content .right text{
+  position: absolute;
+  right: 0;
+  font-size: 50rpx;
+  line-height: 100rpx;
+}
